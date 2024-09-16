@@ -20,13 +20,13 @@ int sumaElementosHastaN(Cola<int> &cola, int n){
         if(dato==n){ // Si dato == n, booleano paso a true
             encontrado = true;
         }
-        if(encontrado){ // Si es verdadero, devuelvo la suma 2
+        if(encontrado){ // Si es verdadero, devuelvo la suma 1
             return suma1;
         } else { // Si no, sigo sumando ambos
             suma1+=dato;
         }
     }
-        return suma1; // Si nunca es verdadero el bool encontrado, devuelvo la suma 2
+        return suma1; // Si nunca es verdadero el bool encontrado, devuelvo la suma 1
 }
 
 int main() {

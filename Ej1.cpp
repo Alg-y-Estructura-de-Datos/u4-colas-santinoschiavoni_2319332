@@ -7,22 +7,19 @@ iguales. Nota: los elementos constitutivos de las colas son caracteres
 #include "Cola/Cola.h"
 using namespace std;
 
-void leerCola(Cola<char> &cola1,Cola<char> &cola2, int &cont1, int &cont2){
+bool leerCola(Cola<char> &cola1,Cola<char> &cola2, int &cont1, int &cont2){
     char dato;
     bool iguales = true;
     if(cont1 != cont2){
-        cout << "Las colas no son iguales" << endl;
-        return;
+        return 0;
     }
     for(int i=0; i<cont1; i++){
         if(cola1.desencolar() != cola2.desencolar()){
             iguales = false;
-            return;
+            return 0;
         }
     }
-    if(iguales){
-        cout << "Las colas son iguales" << endl;
-    }
+    return 1;
 }
 
 int main() {
@@ -48,7 +45,11 @@ int main() {
         cin>>opcion;
     }while(opcion=='s');
 
-    leerCola(cola1, cola2, cont1, cont2);
+    if(leerCola(cola1, cola2, cont1, cont2)){
+        cout<<"Las colas son iguales"<<endl;
+    }else{
+        cout<<"Las colas son distintas"<<endl;
+    }
 
     return 0;
 }
